@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Request token:</b>
+  <%= @user.request_token %>
+</p>
+
+<p>
+  <b>Request secret:</b>
+  <%= @user.request_secret %>
+</p>
+
+<p>
+  <b>Access token:</b>
+  <%= @user.access_token %>
+</p>
+
+<p>
+  <b>Access secret:</b>
+  <%= @user.access_secret %>
+</p>
+
+<p>
+  <b>Verifier:</b>
+  <%= @user.verifier %>
+</p>
+
+<p>
+  <b>Fitbit user:</b>
+  <%= @user.fitbit_user_id %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Password digest:</b>
+  <%= @user.password_digest %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

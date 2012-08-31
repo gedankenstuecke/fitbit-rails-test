@@ -1,0 +1,3 @@
+development:
+    fitbit_consumer_key: your_key
+    fitbit_consumer_secret: your_secret_key
