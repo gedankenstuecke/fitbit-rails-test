@@ -57,6 +57,7 @@ class UsersController < ApplicationController
       current_user.verifier = verifier
       puts "TOKEN:" + access_token.token
       puts "SECRET:" + access_token.secret
+      current_user.fitbit_user_id = @client.user_info["user"]["encodedId"]
       current_user.save
       redirect_to root_url
     else
@@ -64,5 +65,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def subscription_getter
+    puts "PARAMETERS:"
+    puts params
+    read = params["updates"]
+    puts read
+    read_json = read.read
+    notification = JSON.parse(read_json)
+    puts notification[0]
+    puts notification[0]["collectionType"]
+  
+    render :nothing => true, :status => 204
+  end
 end
 
